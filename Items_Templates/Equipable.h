@@ -1,0 +1,4 @@
+enum Equipable {
+    Module,
+    Weapon,
+}
