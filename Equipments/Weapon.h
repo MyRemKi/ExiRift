@@ -11,7 +11,6 @@ public:
     int giveAttackPoint() const;
     void reload();
     void giveMunitions(int munitions);
-    void 
     ~Weapon();
 
 private:

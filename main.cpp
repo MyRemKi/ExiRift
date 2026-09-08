@@ -1,9 +1,9 @@
 #include <iostream>
 using namespace std;
-#include "Random.h"
-#include "Rules.h"
-#include "DropRules.h"
-#include "Player.h"
+#include "Random/Random.h"
+#include "Rules/Rules.h"
+#include "Drop/DropRules.h"
+#include "Player/Player.h"
 #include <stdlib.h>
 #include <chrono>   // Pour std::chrono::seconds
 #include <thread>   // Pour std::this_thread::sleep_for
@@ -62,7 +62,7 @@ void test_3(int count=0){
             request = "attack"; // For testing purposes, we simulate an attack command
             if(request == "attack") {
                 mob->health = 0/*-= player.SetHit()*/; // Example damage value
-                cout << "Attacked mob! Remaining health: " << mob->type<< endl;
+                cout << "Attacked mob! Remaining health: " << static_cast<int>(mob->type)<< endl;
             } else if(request == "inventory") {
                 player.printItems();
                 bool backToGame = false;
@@ -89,8 +89,8 @@ void test_3(int count=0){
             Item item = dropRules.dropItem(rules, *mob);
             cout <<"---------------------" <<endl;
             cout << "Dropped Item: " << item.name << endl;
-            cout << "Dropped type: " << item.type << endl;
-            cout << "Dropped rarity: " << item.rarity << endl;
+            cout << "Dropped type: " << static_cast<int>(item.type) << endl;
+            cout << "Dropped rarity: " << static_cast<int>(item.rarity) << endl;
             cout << "Dropped id: " << item.id << endl;
             cout <<"---------------------" <<endl;
             player.AddItem(item);
@@ -103,6 +103,7 @@ void test_3(int count=0){
     player.printItems();
 }
 
+/*
 int main() {
     std::string ligne;
 
@@ -171,4 +172,9 @@ int main() {
     }
 
     return 0;
-}
+}*/
+
+int main(int argc,char * argv[]){
+    
+    return 0;
+};

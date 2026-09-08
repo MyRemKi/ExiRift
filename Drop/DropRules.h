@@ -2,11 +2,11 @@
 #define DROPRULES_H
 #include <vector>
 #include <utility>
-#include "Rules.h"
-#include "Item.h"
-#include "Random.h"
-#include "Mob.h"
-#include "Loot.h"
+#include "../Rules/Rules.h"
+#include "../Template/Item.h"
+#include "../Random/Random.h"
+#include "../Enemy/Mob.h"
+#include "../Loot.h"
 class DropRules
 {
 public:

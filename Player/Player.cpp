@@ -15,7 +15,7 @@ void Player::printItems() const
     else {
         for (const auto& item : inventory) {
             cout << "--------------------" <<endl;
-            cout << "Item Name: " << item.name <<" | Type: " << item.type <<" | Rarity: " << item.rarity <<" | ID: " << item.id << endl;
+            cout << "Item Name: " << item.name <<" | Type: " << static_cast<int>(item.type) <<" | Rarity: " << static_cast<int>(item.rarity) <<" | ID: " << item.id << endl;
             cout<<"--------------------" <<endl;
         }
     }

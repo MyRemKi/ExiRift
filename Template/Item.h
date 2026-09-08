@@ -3,44 +3,20 @@
 #include <string>
 using std::string;
 
-enum ItemCategoryType
-{
-    Equipable,
-    Consumable,
-    Usable,
-    Unknown,
-};
+#include "ItemCategoryType.h"
+#include "ItemType.h"
+#include "ItemRarity.h"
 
-enum ItemType
-{
-    Module,
-    Weapon,
-    Coin,
-    Rubbish,
-    Artefact,
-    Fragment,
-    Chest,
-    Unknown
-};
+#include "IDItem.h"
 
-enum ItemRarity
-{
-    Common,
-    Rare,
-    Epic,
-    Legendary,
-    None
-};
-
-struct Item
+struct Item : public IDItem
 {
     ItemType type;
     ItemRarity rarity;
     int id;
     string name;
 
-    Item(ItemType t=Unknown, ItemRarity r=None, int i=0, string n="") : type(t), rarity(r), id(i), name(n) {
-        if()
+    Item(int i=0, string n="", ItemType t=ItemType::Unknown, ItemRarity r=ItemRarity::None) : type(t), rarity(r), id(i), name(n) {
     }
 
 };

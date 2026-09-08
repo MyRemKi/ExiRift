@@ -1,4 +1,4 @@
 enum Equipable {
-    Module,
-    Weapon,
-}
+    E_Module,
+    E_Weapon,
+};

@@ -6,6 +6,21 @@ Weapon::Weapon(string name, int attack_point, int reload_time, int current_munit
 
 }
 
+int Weapon::giveAttackPoint() const
+{
+    return attack_point;
+}
+
+void Weapon::reload()
+{
+    current_munitions = max_munitions;
+}
+
+void Weapon::giveMunitions(int munitions)
+{
+    current_munitions += munitions;
+}
+
 Weapon::~Weapon()
 {
 

@@ -1,24 +1,26 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 #include <vector>
-#include "Item.h"
+#include "../Template/Item.h"
+#include "../Equipments/Weapon.h"
+#include "../Position.h"
 #include <iostream>
 using namespace std;
 using std::vector;
-#define SIZE_INVENTORY 10
-class Player
+class Player : public Position
 {
 public:
     Player(int h, int a);
     void printItems() const;
-    int SetHit() const { return class_weapon_1->getDamage(); }
+    int SetHit() const { return class_weapon_1->giveAttackPoint(); }
     void AddItem(const Item& item) { inventory.push_back(item); }
     ~Player();
 
 private:
-    int health; 
-    Item inventory[SIZE_INVENTORY];
-    Weapon *class_weapon_1, *class_weapon_2;
+    int health;
+    int attack;
+    vector<Item> inventory;
+    Weapon *class_weapon_1 = nullptr, *class_weapon_2 = nullptr;
 
 };
 
