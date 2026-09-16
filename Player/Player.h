@@ -3,7 +3,7 @@
 #include <vector>
 #include "../Template/Item.h"
 #include "../Equipments/Weapon.h"
-#include "../Position.h"
+#include "../Template/Position.h"
 #include <iostream>
 using namespace std;
 using std::vector;
@@ -13,6 +13,12 @@ public:
     Player(int h, int a);
     void printItems() const;
     int SetHit() const { return class_weapon_1->giveAttackPoint(); }
+    void GetHit(int hit){
+        this->health -=hit;
+    }
+    bool CheckHealth(){
+        return this->health <= 0;
+    }
     void AddItem(const Item& item) { inventory.push_back(item); }
     ~Player();
 

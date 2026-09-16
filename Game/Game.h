@@ -1,13 +1,13 @@
 #ifndef GAME_H
 #define GAME_H
-#include "Player/Player.h"
+#include "../Player/Player.h"
 #include <string>
 using std::string;
 
-#include "Inventory.h"
+#include "../Inventory/Inventory.h"
+#include "../Random/Random.h"
 
-
-#include "Enemy/Mob.h"
+#include "../Enemy/Mob.h"
 #define SIZE_SPAWN_MOBS 10
 #pragma once
 
@@ -27,6 +27,7 @@ public:
     ~Game();
 
 private:
+    Random rand;
     bool loop = true;
     Player *player;
     Inventory *inventory;

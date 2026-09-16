@@ -6,6 +6,16 @@ Game::Game()
     this->Init();
 }
 
+void Game::PrintCommand(){
+    cout<<"-------- Command Avaible --------"<<endl;
+    cout<<" - exit      : to leave the game"<<endl;
+    cout<<" - play      : to begin the game"<<endl;
+    cout<<" - inventory : check items "<<endl;
+    cout<<" - equipment : check modules / equipments"<<endl;
+    cout<<"-------- --------------- --------"<<endl;
+
+}
+
 void Game::Init(){
     player = new Player(100,10);
 
@@ -24,7 +34,7 @@ void Game::Run(){
 }
 
 void Game::Exit(){
-
+    this->loop=false;
 }
 
 string Game::ReturnRequest(){
@@ -45,15 +55,15 @@ void Game::CommandSelectionToMethodCalling(string &request){
         this->CheckEquipments();
     }
     else if(request == "help"){
-        cout<<"-----------HELP PAGE-----------"<<endl;
-        cout<<"play = to play the game "<<endl;
-        cout<<"inventory = to open and check your inventory "<<endl;
-        cout<<"equiment = to check your equipment (weapons and modules) "<<endl;
-        cout<<endl;
-        cout<<"-----FOR MORE INFORMATION-----"<<endl;
+        this->PrintCommand();
+        cout<<"----- FOR MORE INFORMATION -----"<<endl;
         cout<<"play -h"<<endl;
         cout<<"inventory -h"<<endl;
         cout<<"equipment -h"<<endl;
+        cout<<"----- -------------------- -----"<<endl;
+    }
+    else if(request == "exit"){
+        this->Exit();
     }
     
     else{
@@ -64,8 +74,23 @@ void Game::CommandSelectionToMethodCalling(string &request){
 //PARTIE LOOP DU GAME
 void Game::Play(){
     bool playloop=true;
+    cout<<"-------- Command Avaible --------"<<endl;
+    cout<<" - generate mobs  : to leave the game"<<endl;
+    cout<<" - attack         : to hit the mob   "<<endl;
+    cout<<" - exit           : to exit the play"<<endl;
+    cout<<"-------- --------------- --------"<<endl;
     while(playloop){
+        string request="";
 
+        if(request == "generate"){
+            for(int i=1;i<10;i++){
+                Mob * mob=new Mob("Basic Mob",rand.getInt(3,20),rand.getInt(1,3),MobType::Basic);
+                mobs.push_back(mob);
+            }
+        }
+        else if(request == "attack"){
+            cout<<"attack"<<endl;
+        }
     }
 }
 

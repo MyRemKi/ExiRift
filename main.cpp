@@ -1,5 +1,9 @@
 #include <iostream>
 using namespace std;
+
+#include "Game/Game.h"
+
+/*
 #include "Random/Random.h"
 #include "Rules/Rules.h"
 #include "Drop/DropRules.h"
@@ -10,7 +14,9 @@ using namespace std;
 #include <iostream>
 #include <string>
 #include <sstream>
+*/
 
+/*
 void test_1(){
     int randomInt = Random::getInt(1, 100);
     float randomFloat = Random::getFloat(0.0f, 1.0f);
@@ -20,7 +26,9 @@ void test_1(){
     cout << "Random Float: " << randomFloat << endl;
     cout << "Roll Chance (50%): " << (result ? "Success" : "Failure") << endl;
 }
+*/
 
+/*
 void test_2(){
     Rules rules;
     rules.printItems();
@@ -32,7 +40,9 @@ void test_2(){
     cout << "Dropped Item: " << item.name << endl;
     delete mob;
 }
+*/
 
+/*
 void test_3(int count=0){
     Rules rules;
     DropRules dropRules;
@@ -61,7 +71,7 @@ void test_3(int count=0){
             string request; // Example damage value
             request = "attack"; // For testing purposes, we simulate an attack command
             if(request == "attack") {
-                mob->health = 0/*-= player.SetHit()*/; // Example damage value
+                mob->health = 0 ;//-= player.SetHit();Example damage value
                 cout << "Attacked mob! Remaining health: " << static_cast<int>(mob->type)<< endl;
             } else if(request == "inventory") {
                 player.printItems();
@@ -102,6 +112,7 @@ void test_3(int count=0){
     }
     player.printItems();
 }
+*/
 
 /*
 int main() {
@@ -175,6 +186,8 @@ int main() {
 }*/
 
 int main(int argc,char * argv[]){
-    
+    Game game;
+    game.Init();
+    game.Run();
     return 0;
 };

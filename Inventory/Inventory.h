@@ -1,8 +1,8 @@
 #ifndef INVENTORY_H
 #define INVENTORY_H
-#include "Template/Item.h"
-#include "Equipments/Module.h"
-#include "Equipments/Weapon.h"
+#include "../Template/Item.h"
+#include "../Equipments/Module.h"
+#include "../Equipments/Weapon.h"
 
 #include <vector>
 using std::vector;
@@ -34,9 +34,9 @@ public:
     ~Inventory();
 
 private:
-    vector<Item> inventory;
-    vector<Weapon> weapon;
-    vector<Module> module;
+    vector<Item> inventory={};
+    vector<Weapon> weapon={};
+    vector<Module> module={};
 };
 
 #endif

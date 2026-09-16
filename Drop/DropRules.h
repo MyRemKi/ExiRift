@@ -6,7 +6,7 @@
 #include "../Template/Item.h"
 #include "../Random/Random.h"
 #include "../Enemy/Mob.h"
-#include "../Loot.h"
+#include "../Inventory/Loot.h"
 class DropRules
 {
 public:

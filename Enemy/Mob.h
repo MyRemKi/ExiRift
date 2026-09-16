@@ -3,7 +3,7 @@
 
 #include <string>
 #include "MobType.h"
-#include "../Position.h"
+#include "../Template/Position.h"
 
 struct Mob : public Position {
     std::string name;
