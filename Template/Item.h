@@ -2,7 +2,8 @@
 #define ITEM_H
 #include <string>
 using std::string;
-
+#include <variant>
+using ItemVariant = std::variant<Consumable, Equipable, Usable>;
 enum ItemCategoryType
 {
     Equipable,
