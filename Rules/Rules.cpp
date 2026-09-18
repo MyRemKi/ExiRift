@@ -220,7 +220,7 @@ void Rules::printItems() const
 {
     for (const auto& item : datas)
     {
-        std::cout << "ID: " << item.id << ", Name: " << item.name << ", Type: " << item.type << ", Rarity: " << item.rarity << std::endl;
+        std::cout << "ID: " << item.id << ", Name: " << item.name << ", Type: " << static_cast<int>(item.type) << ", Rarity: " << static_cast<int>(item.rarity) << std::endl;
     }
 }
 

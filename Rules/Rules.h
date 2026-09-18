@@ -2,11 +2,11 @@
 #define RULES_H
 #include <vector>
 #include <iostream>
-#include "Random.h"
+#include "../Random/Random.h"
 using namespace std;
 using std::vector;
 
-#include "Item.h"
+#include "../Template/Item.h"
 
 class Rules
 {
