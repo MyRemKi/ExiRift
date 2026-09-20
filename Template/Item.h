@@ -2,7 +2,8 @@
 #define ITEM_H
 #include <string>
 using std::string;
-
+#include <variant>
+using ItemVariant = std::variant<Consumable, Equipable, Usable>;
 enum ItemCategoryType
 {
     Equipable,
@@ -39,7 +40,8 @@ struct Item
     int id;
     string name;
 
-    Item(int i=0, string n="", ItemType t=ItemType::Unknown, ItemRarity r=ItemRarity::None) : type(t), rarity(r), id(i), name(n) {
+    Item(ItemType t=Unknown, ItemRarity r=None, int i=0, string n="") : type(t), rarity(r), id(i), name(n) {
+        if()
     }
 
 };
