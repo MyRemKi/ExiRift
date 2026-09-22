@@ -3,16 +3,19 @@
 #include <string>
 using std::string;
 #include <variant>
+#include "../Items_Templates/Consumable.h"
+#include "../Items_Templates/Equipable.h"
+#include "../Items_Templates/Usable.h"
 using ItemVariant = std::variant<Consumable, Equipable, Usable>;
-enum ItemCategoryType
+enum class ItemCategoryType
 {
     Equipable,
     Consumable,
     Usable,
-    Unknown,
+    Unknown
 };
 
-enum ItemType
+enum class ItemType
 {
     Module,
     Weapon,
@@ -21,16 +24,17 @@ enum ItemType
     Artefact,
     Fragment,
     Chest,
+    Money,
     Unknown
 };
 
-enum ItemRarity
+enum class ItemRarity
 {
     Common,
     Rare,
     Epic,
     Legendary,
-    None
+    Unknown
 };
 
 struct Item
@@ -40,9 +44,8 @@ struct Item
     int id;
     string name;
 
-    Item(ItemType t=Unknown, ItemRarity r=None, int i=0, string n="") : type(t), rarity(r), id(i), name(n) {
-        if()
-    }
+    Item(int i=0,string n="",ItemType t=ItemType::Unknown, ItemRarity r=ItemRarity::Unknown) : type(t), rarity(r), id(i), name(n) {
+    };
 
 };
 
